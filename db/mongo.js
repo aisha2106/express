@@ -10,6 +10,11 @@ app.use(express.urlencoded({extended:true}))
 
 dotenv.config();
 app.use('/student', studentRoutes)
+app.get('/' , (req, res) => {
+    res.send({
+        message: "Aisha's API is working"
+    })
+})
 
 async function startServer() {
     await connectDB()
